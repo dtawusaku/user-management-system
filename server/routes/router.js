@@ -1,17 +1,13 @@
 const express = require('express');
 const route = express.Router();
+const services = require("../services/render")
 
 
-route.get('/',(req,res)=>{
-
-    res.render('index');
-})
-
-route.get('/e',(req,res)=>{
-    res.send("Yes");
-})
-
-
+route.get('/',services.homeRoutes)
+route.get('/add-user',services.add_user)
+route.get('/edit-user',services.edit_user)
+route.get('/update-user',services.update_user)
+route.get('/delete-user',services.delete_user)
 
 
 

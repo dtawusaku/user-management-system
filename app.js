@@ -5,12 +5,17 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
 const path = require("path")
+const connectDB = require("./server/database/connection");
 
 // Middleware
+app.use(morgan('dev')); // log requests to the console
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(morgan('dev')); // log requests to the console
+
 // app.use(cors()); // enable CORS
+
+// MongoDB Connection
+connectDB();
 
 // Configuration file
 dotenv.config({path:'config.env'});

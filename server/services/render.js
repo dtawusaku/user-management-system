@@ -4,7 +4,6 @@
 exports.homeRoutes = (req,res)=>{
     res.render('index');
 }
-
 exports.add_user = (rq,res)=>{
     res.render('add-user');
 }

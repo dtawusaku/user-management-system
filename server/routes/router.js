@@ -14,7 +14,7 @@ route.get('/delete-user',services.delete_user)
 
 // API
 route.get("/api/users",controller.find); // Fetch all Users
-route.get("/api/users:id",controller.findOne); // Fetch a single user
+route.get("/api/users/find:id",controller.findOne); // Fetch a single user
 route.post("/api/users",controller.create);
 route.put("/api/users:id",controller.update);
 route.delete("/api/users:id",controller.delete);
